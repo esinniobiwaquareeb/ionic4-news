@@ -1,9 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>news-single</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>{{article.title}}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <ion-card>
+        <ion-img [src]="article.urlToImage"></ion-img>
+        <ion-card-header>
+            <ion-card-title>{{article.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>{{article.description}}</p>
+            <ion-grid>
+                <ion-col>
+                    Author
+                </ion-col>
+                <ion-col>
+                    {{article.author}}
+                </ion-col>
+            </ion-grid>
+            <ion-grid>
+                <ion-col>
+                    Date Posted
+                </ion-col>
+                <ion-col>
+                    {{article.publishedAt | date: 'fullDate'}}
+                </ion-col>
+            </ion-grid>
 
+        </ion-card-content>
+    </ion-card>
 </ion-content>
